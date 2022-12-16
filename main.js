@@ -90,10 +90,23 @@ function totalCost(product) {
     }else {
         localStorage.setItem("totalCost", product.price);
     }
-
-   
 }
 
+function displayCart() {
+    let cartItems = localStorage.getItem("productsInCart")
+    cartItems = JSON.parse(cartItems);
+    let productContainer = document.querySelector(".product-container");
 
+    console.log(cartItems)
+    if( cartItems && productContainer) {
+        productContainer.innerHTML = '';
+        Object.values(cartItems).map(item => {
+            productContainer.innerHTML += 
+       
+        });
+
+ }
+}
 
 onLoadCartNumbers();
+displayCart();
